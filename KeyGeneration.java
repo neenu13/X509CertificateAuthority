@@ -1,3 +1,5 @@
+package Demo;
+
 import java.io.BufferedOutputStream;
 import java.io.FileOutputStream;
 import java.io.IOException;
@@ -24,9 +26,10 @@ public class KeyGeneration {
 	/**
 	 * @param args
 	 */
-	public static void main(String[] args) {
+	public void keyGenerate() {
 		
 		 try {
+			 System.out.println("calling fn");
 			generateKeys();
 		} catch (Exception e) {
 			e.printStackTrace();
@@ -39,7 +42,7 @@ public class KeyGeneration {
 	 * @throws Exception
 	 */
 	
-	  public static void generateKeys() throws Exception {
+	  public  void generateKeys() throws Exception {
 	        KeyPairGenerator kpg = KeyPairGenerator.getInstance("RSA");
 	        kpg.initialize(2048);
 	        KeyPair kp = kpg.genKeyPair();
@@ -54,8 +57,8 @@ public class KeyGeneration {
 	        RSAPrivateKeySpec priv = (RSAPrivateKeySpec)fact.getKeySpec(privateKey,
 	                RSAPrivateKeySpec.class);
 
-	        saveToFile("public.key", pub.getModulus(), pub.getPublicExponent());
-	        saveToFile("private.key", priv.getModulus(), priv.getPrivateExponent());
+	        saveToFile("/home/student/public.key", pub.getModulus(), pub.getPublicExponent());
+	        saveToFile("/home/student/private.key", priv.getModulus(), priv.getPrivateExponent());
 
 	        System.out.println("keys saved");
 	    }
@@ -84,3 +87,4 @@ public class KeyGeneration {
 	    }
 
 }
+

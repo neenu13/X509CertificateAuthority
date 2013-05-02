@@ -1,8 +1,8 @@
-We are submitting the partial code here.Three modules are almost completed here.
-1)User data Collection(Front End)
+We are submitting the full code here.
+1)User data Collection(Front End-index.html.main.html,insert.php,frontpage.html)
 __________________________________
 
-   This is done using html and php.The files for the same are main.html,insert.html,frontpage.html and insert.php.The screen shots of the front page is uploaded.
+   This is done using html and jsp.The screen shots of the front page is uploaded.
 
 2)Generate public/private key pair for
 __________________________________________
@@ -14,3 +14,9 @@ __________________________________________
 _____________________________________________
 
    This is done in X509CertificateGenerator.java.First we will find out the hash of the user input collected using the MD5 and then encrypt the hash using private key of the Certificate Authority.
+
+4)Delivery of the digital certificate
+_______________________________________________
+
+   The client can either save or view the digital certificate provided by the certificate authority.The screen shot os attached here.
+

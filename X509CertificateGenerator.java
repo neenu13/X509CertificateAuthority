@@ -1,3 +1,5 @@
+package Demo;
+
 import java.io.BufferedInputStream;
 import java.io.FileInputStream;
 import java.io.FileOutputStream;
@@ -23,22 +25,7 @@ import javax.crypto.CipherOutputStream;
 
 public class X509CertificateGenerator{
 
-	/**
-	 * @param args
-	 */
-	public static void main(String[] args) {
-		// TODO Auto-generated method stub
-		try{
-			
-			rsaEncrypt("/home/student/test.txt", "encrypted.txt");
-			
-		}catch(Exception ex){
-			System.out.println("error");
-		}
-		 
-	     
-	}
-	
+		
 	/**
 	 * This method is to read the public/private key of the certificate authority.This key is furhter used to
 	 * encrypt the data given by user.
@@ -75,14 +62,14 @@ public class X509CertificateGenerator{
      * @throws Exception
      */
     
-    public static void rsaEncrypt(String file_loc, String file_des)
+    public static  void rsaEncrypt(String file_loc, String file_des)
             throws Exception {
         byte[] data = new byte[32];
         int i;
 
         System.out.println("start encyption");
 
-        Key pubKey = readKeyFromFile("public.key");
+        Key pubKey = readKeyFromFile("/home/student/private.key");
         Cipher cipher = Cipher.getInstance("RSA");
         cipher.init(Cipher.ENCRYPT_MODE, pubKey);
 
